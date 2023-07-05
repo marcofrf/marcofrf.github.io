@@ -371,7 +371,7 @@ img{
     position:relative;
     display:flex;
     text-align: justify;
-    justify-content: baseline;
+    justify-content: center;
     flex-direction: column;
     width:50%;
     height:70%;
