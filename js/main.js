@@ -1,15 +1,29 @@
 // ANIMATE OPACITY ON PAGE LOAD
 window.onload = function() {
-        document.querySelector(".content").animate([
-            { // from
-                opacity: 0,
-            },
-            { // to
-                opacity: 1,
-            }
-            ], 1000);
+    var content = document.querySelector(".content");
+    content.animate([
+        { // from
+            opacity: 0,
+        },
+        { // to
+            opacity: 1,
+        }
+    ], 1000);
+    content.style.opacity = '1';
 }
 
+window.onunload = function() {
+    var content = document.querySelector(".content");
+    content.animate([
+        { // from
+            opacity: 1,
+        },
+        { // to
+            opacity: 0,
+        }
+    ], 1000);
+    content.style.opacity = '0';
+}
 // ANIMATE FRAME
 let frame = document.querySelector(".frame");
 window.setInterval(() => {
@@ -98,108 +112,6 @@ if(mobile){
             });
         }
     )
-}
-
-// IN PROJECTS PAGE
-if (fileName == "works.html"){                                  
-    var carousel = document.querySelector(".carousel");
-    var projects = document.querySelectorAll(".project");
-    var newProject;
-    var scrollAmount = projects[0].offsetWidth;
-    var ball = [];
-    var ballCount = 0;
-    let projScroll = document.querySelector(".project-scroll");
-
-    for(i=0; i<projects.length; i++){                                                               // APPENDS PROJECT SCROLL BALLS
-
-        ball[i] = document.createElement('div');
-        ball[i].setAttribute("class","ball");
-        ball[i].setAttribute("id", "ballDown");
-        projScroll.append(ball[i]);
-    }
-
-    projects[0].classList.toggle('fade');
-    ball[ballCount].style.background = "white";
-    
-    rightArrow.addEventListener("click", function(){                                                // CLICK RIGHT SCREEN ARROW - SCROLL RIGHT, ANIMATE SCROLL BALLS
-        console.log(carousel.scrollLeft);
-        if (carousel.scrollLeft == 0 || carousel.scrollLeft == carousel.offsetWidth){
-            goRight();
-            ball[ballCount].style.background = "transparent";
-            ballCount++;
-            if(ballCount == ball.length){
-                ballCount = 0;
-            }
-            ball[ballCount].style.background = "white";
-        }
-    });
-    
-    leftArrow.addEventListener("click", function(){                                                 // CLICK LEFT SCREEN ARROW - SCROLL LEFT, ANIMATE SCROLL BALLS
-        if (carousel.scrollLeft == 0 || carousel.scrollLeft == carousel.offsetWidth){
-            goLeft();
-            ball[ballCount].style.background = "transparent";
-            ballCount--;
-            if(ballCount == -1){
-                ballCount = ball.length-1;
-            }
-            ball[ballCount].style.background = "white";
-        }
-    });
-
-    window.addEventListener("keydown", function(e){                                                 // RIGHT KEY ARROW - SCROLL RIGHT, ANIMATE SCROLL BALLS
-        console.log(carousel.scrollLeft);
-        console.log(carousel.offsetWidth);
-        if (carousel.scrollLeft == 0 || carousel.scrollLeft == carousel.offsetWidth){
-
-            if(e.keyCode == "39"){
-                goRight();
-                ball[ballCount].style.background = "transparent";
-                ballCount++;
-                if(ballCount == ball.length){
-                    ballCount = 0;
-                }
-                ball[ballCount].style.background = "white";
-            }
-            if(e.keyCode == "37"){                                                                  // LEFT KEY ARROW - SCROLL RIGHT, ANIMATE SCROLL BALLS
-                goLeft();
-                ball[ballCount].style.background = "transparent";
-                ballCount--;
-                if(ballCount == -1){
-                    ballCount = ball.length-1;
-                }
-                ball[ballCount].style.background = "white";
-            }
-        }
-    }); 
-
-
-    var xi, xf, yi, yf;
-    if(mobile){
-        
-        // MOBILE PROJECT SCROLL
-        window.addEventListener("mousedown", function(e){                                           
-            xi = e.clientX;
-            yi = e.clientY;
-            if (xi > 280){
-                goRight();
-                ball[ballCount].style.background = "transparent";
-                ballCount++;
-                if(ballCount == ball.length){
-                    ballCount = 0;
-                }
-                ball[ballCount].style.background = "white";
-            }
-            if (xi < 90){
-                goLeft();
-                ball[ballCount].style.background = "transparent";
-                ballCount--;
-                if(ballCount == -1){
-                    ballCount = ball.length-1;
-                }
-                ball[ballCount].style.background = "white";
-            }
-        })
-    }
 }
 
 
