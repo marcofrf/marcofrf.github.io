@@ -64,6 +64,7 @@ p{
     font-size: 14px;
     font-family: "hack", Verdana, Tahoma;
     line-height: 2;
+    margin-top: 5px;
 }
 
 h1{
@@ -74,6 +75,16 @@ h1{
     margin:0;
     padding:0;
     line-height: 30px;
+}
+
+h2{
+    font-family: "hack", Verdana, Tahoma;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top:0;
+    margin-bottom:30px;
+    padding:0;
 }
 
 img{
@@ -466,7 +477,7 @@ img{
     position:relative;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     width:50%;
     height:100%;
 }
