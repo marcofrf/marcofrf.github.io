@@ -462,16 +462,13 @@ img{
 .project-img{
     position:relative;
     display: flex;
-    flex-direction: column;
-    width:50%;
+    flex-wrap: wrap;
+    max-width:50%;
     height:max-content;
     margin-top: 75px;
     gap: 20px;
 }
- 
-#img {
-    height: 100%;
-}
+
 
 .project-desc{
     position:relative;
