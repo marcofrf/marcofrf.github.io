@@ -39,27 +39,28 @@ window.setInterval(() => {
     }
 }, 100 / 60);
 
-// MANAGE PROJECT IMAGES
-function setImgAspect() {
-    let images = document.querySelector(".project-img");
-    for (i = 0; i < images.children.length; i++){
-        let image = images.children[i];
-        if (image.width < image.height){
-            image.style.width = String(images.offsetWidth/2-20)+"px";
+// MANAGE PROJECT IMAGES ON DESKTOP
+if (!mobile){
+    function setImgAspect() {
+        let images = document.querySelector(".project-img");
+        for (i = 0; i < images.children.length; i++){
+            let image = images.children[i];
+            if (image.width < image.height){
+                image.style.width = String(images.offsetWidth/2-20)+"px";
+            }
+        }
+    }
+    if(document.readyState === 'ready' || document.readyState === 'complete') {
+        setImgAspect();
+    }
+    else {
+        document.onreadystatechange = function () {
+            if (document.readyState == "complete") {
+                setImgAspect();
+            }
         }
     }
 }
-if(document.readyState === 'ready' || document.readyState === 'complete') {
-    setImgAspect();
-}
-else {
-    document.onreadystatechange = function () {
-        if (document.readyState == "complete") {
-            setImgAspect();
-        }
-    }
-  }
-
 
 
 /*
