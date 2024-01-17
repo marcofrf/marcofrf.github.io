@@ -1,3 +1,10 @@
+
+var fileName = location.href.split("/").slice(-1); 
+var mobile = window.matchMedia("(max-width: 600px)").matches;
+let leftArrow = document.querySelector("#leftArrow");
+let rightArrow = document.querySelector("#rightArrow");
+
+
 // ANIMATE OPACITY ON PAGE LOAD
 window.onload = function() {
     var content = document.querySelector(".content");
@@ -43,10 +50,14 @@ window.setInterval(() => {
 if (!mobile){
     function setImgAspect() {
         let images = document.querySelector(".project-img");
-        for (i = 0; i < images.children.length; i++){
-            let image = images.children[i];
-            if (image.width < image.height){
-                image.style.width = String(images.offsetWidth/2-20)+"px";
+        if (images){
+            if(images.children){
+                for (i = 0; i < images.children.length; i++){
+                    let image = images.children[i];
+                    if (image.width < image.height){
+                        image.style.width = String(images.offsetWidth/2-20)+"px";
+                    }
+                }
             }
         }
     }
@@ -102,11 +113,6 @@ function insertAfter(newNode, existingNode) {
 
 
 */
-var fileName = location.href.split("/").slice(-1); 
-var mobile = window.matchMedia("(max-width: 600px)").matches;
-let leftArrow = document.querySelector("#leftArrow");
-let rightArrow = document.querySelector("#rightArrow");
-
 
 //MOBILE/IPAD
 if(mobile){
