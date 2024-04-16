@@ -463,6 +463,7 @@ img{
     position:relative;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     max-width:50%;
     margin-top: 75px;
     gap: 20px;
