@@ -55,7 +55,7 @@ if (!mobile){
                 for (i = 0; i < images.children.length; i++){
                     let image = images.children[i];
                     if (image.width < image.height){
-                        image.style.width = String(images.offsetWidth/2-20)+"px";
+                        image.style.width = String(images.offsetWidth/2-10)+"px";
                     }
                 }
             }

@@ -464,7 +464,6 @@ img{
     display: flex;
     flex-wrap: wrap;
     max-width:50%;
-    height:max-content;
     margin-top: 75px;
     gap: 20px;
 }
