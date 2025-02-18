@@ -67,6 +67,11 @@ p{
     margin-top: 5px;
 }
 
+a{
+    text-decoration:underline;
+    color:rgba(255, 255, 255, 1);
+}
+
 h1{
     font-family: "sourceCode", Verdana, Tahoma;
     text-transform: uppercase;
