@@ -15,7 +15,7 @@ window.onload = function() {
         { // to
             opacity: 1,
         }
-    ], 1000);
+    ], 2000);
     content.style.opacity = '1';
 }
 
