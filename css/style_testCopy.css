@@ -93,7 +93,7 @@ iframe{
 p{
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
-    font-family: "hack", Verdana, Tahoma;
+    font-family: "sourcecode", Verdana, Tahoma;
     line-height: 2;
     margin-top: 5px;
 }
@@ -114,7 +114,7 @@ h1{
 }
 
 h2{
-    font-family: "hack", Verdana, Tahoma;
+    font-family: "sourcecode", Verdana, Tahoma;
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     line-height: 1.5;
@@ -142,8 +142,8 @@ img{
     transform: translate(-50%,-50%) translateZ(0);
     z-index:10;
     -webkit-font-smoothing: antialiased;
-    font-size: 11px;
-    font-family: bold,sans-serif;
+    font-size: 12px;
+    font-family: "sourcecode",bold,sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -342,7 +342,13 @@ text-decoration-color: rgba(255, 255, 255, 0.5);
 }
 
 .title h1{
-    letter-spacing: 5px;
+    letter-spacing: 2px;
+    font-size: 22px
+}
+
+.title p{
+    letter-spacing: 0px;
+    font-size: 14px;
 }
 
 /* EMAIL*/
@@ -359,15 +365,15 @@ text-decoration-color: rgba(255, 255, 255, 0.5);
 }
 
 .email a{
-    font-family: "sourceCode";
-    font-size: 15px;
-    letter-spacing: 3px;
+    font-family: "sourcecode";
+    letter-spacing: 2px;
+    font-size: 12px;
     text-decoration: none;
     color:rgb(255, 255, 255);
 }
 
 .email p{
-    font-size: 15px;
+    font-size: 12px;
     letter-spacing: 3px;
 }
 
@@ -526,7 +532,7 @@ text-decoration-color: rgba(255, 255, 255, 0.5);
 .bio-desc p{
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
-    font-family: "hack", Verdana, Tahoma;
+    font-family: "sourcecode", Verdana, Tahoma;
     line-height: 2;
     margin-bottom:20px;
 }

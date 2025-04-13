@@ -4,7 +4,6 @@ var mobile = window.matchMedia("(max-width: 600px)").matches;
 let leftArrow = document.querySelector("#leftArrow");
 let rightArrow = document.querySelector("#rightArrow");
 
-
 // ANIMATE OPACITY ON PAGE LOAD
 window.onload = function() {
     var content = document.querySelector(".content");
@@ -19,7 +18,7 @@ window.onload = function() {
     content.style.opacity = '1';
 }
 
-window.onunload = function() {
+window.beforeunload = function() {
     var content = document.querySelector(".content");
     content.animate([
         { // from
@@ -28,23 +27,32 @@ window.onunload = function() {
         { // to
             opacity: 0,
         }
-    ], 1000);
+    ], 2000);
     content.style.opacity = '0';
 }
-// ANIMATE FRAME
-let frame = document.querySelector(".frame");
-window.setInterval(() => {
-    for (i = 0; i < 4; i++){
-        frame.children[i].animate([
-            { // from
-              opacity: Math.random(1)+0.5,
-            },
-            { // to
-              opacity: Math.random(1)+0.5,
-            }
-          ], 100);
-    }
-}, 100 / 60);
+
+/*
+function startFrameAnimation() {
+    const frame = document.querySelector(".frame");
+    if (!frame) return;
+  
+    setInterval(() => {
+      for (let i = 0; i < Math.min(4, frame.children.length); i++) {
+        frame.children[i].animate(
+          [
+            { opacity: Math.random() + 0.5 },
+            { opacity: Math.random() + 0.5 },
+          ],
+          100
+        );
+      }
+    }, 1000 / 60);
+  }
+  */
+  
+
+
+
 
 // MANAGE PROJECT IMAGES ON DESKTOP
 if (!mobile){
