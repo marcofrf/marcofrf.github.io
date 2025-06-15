@@ -564,8 +564,7 @@ text-decoration-color: rgba(255, 255, 255, 0.5);
     display: flex;
     flex-wrap: wrap;
     align-items: start;
-    max-width:50%;
-
+    width:50%;
     gap: 20px;
 }
 
